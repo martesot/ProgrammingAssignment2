@@ -1,17 +1,14 @@
-## Put comments here that give an overall description of what your
-## functions do
-
 ## Use the example assignment given, and change "makevector" to "makecachematrix" and further "getmean" to "getinv"
 ## I do the same for the second function
 
 makeCacheMatrix <- function(x = matrix())  ## The given code for function
-        {
- inv <- NULL    ## Set value to 0, to initialize the inverse matrix as null
- set <- function(y)     
-   {
-   x <<- y
-   inv <<- NULL
- }
+{
+  inv <- NULL    ## Set value to 0, to initialize the inverse matrix as null
+  set <- function(y)     
+  {
+    x <<- y
+    inv <<- NULL
+  }
   get <- function() x   ## Function to get Matrix
   setinv <- function(inverse) inv <<- inverse
   getinv <- function() inv 
@@ -31,10 +28,10 @@ makeCacheMatrix <- function(x = matrix())  ## The given code for function
 ## If not, it gives the cache by the «set inverse» function.
 
 cacheSolve <- function(x, ...)  ## Code given to describe/solve this assignment
-        {
+{
   inv <- x$getinv()
   if(!is.null(inv)) 
-    {
+  {
     message("cached")
     return(inv)         ## Returns value of inverse
   }
@@ -44,9 +41,9 @@ cacheSolve <- function(x, ...)  ## Code given to describe/solve this assignment
   inv   ## Returns matrix that is inverse of x
 }
 
-## Can further test if this actually works by doing a test with real numbers
+## Now, testing if this actually works by doing a test with real numbers
 
-myFunction <- makeCacheMatrix(matrix(1:4, 3, 2))
-myFunction$get()
-myFunction$getinverse()
+f <- makeCacheMatrix(matrix(1:4, 3, 2))
+f$get()
+f$getinverse()
 cacheSolve(myFunction)
