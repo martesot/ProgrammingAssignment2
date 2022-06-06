@@ -1,7 +1,8 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## Use the example assignment given, and change "makevector" to "makecachematrix" and further "getmean" to "getinv"
+## I do the same for the second function
 
 makeCacheMatrix <- function(x = matrix())  ## The given code for function
         {
